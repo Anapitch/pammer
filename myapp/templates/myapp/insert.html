@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="django form with utf-8">
+    <meta name="author" content="wichit2s">
+    <title>Services</title>
+
+    {% load static %}
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <style>
+      .filled {
+        width: 80%;
+        padding: 5px;
+      }
+      .spacing {
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body background="https://www.petmd.com/sites/default/files/petmd-dog-eyes.jpg">
+    <nav> <h1> DATA - ACCOUNT </h1> </nav>
+    <div>
+      <section class="filled">
+        <form action="insert" method="POST" enctype="multipart/form-data;charset=UTF-8">
+          
+          {% csrf_token %}
+          <div class="spacing"><input class="filled" type="text" name="icon" value="กรอกข้อมูล"/></div>
+          <div class="spacing"><input class="filled" type="text" name="title" value="อะไรก็ได้"/></div>
+          <div class="spacing"><input class="filled" type="text" name="detail" value="Hello"/></div>
+          <div class="spacing">
+            <button style="padding: 2em;" type="submit">Submit</button>
+          </div>
+          
+        </form>
+        <div class="spacing">
+        <a href="google"><button style="padding: 2em;">GO BACK</button></a>
+        </div>
+      </section>
+      <div>
+       <table style="width:80%; border: 1px solid black; padding: 1em; background: #fff;">
+        <tr>
+          <th>Icon</th>
+          <th>Title</th>
+          <th>Detail</th>
+        </tr>
+        {% for s in services %}
+        <tr>
+          <td> <i class="fa {{s.icon}}"></i> {{ s.icon }}</td>
+          <td>{{ s.title }}</td>
+          <td>{{ s.detail }}</td>
+        </tr>
+        {% endfor %}
+      </table> 
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>Copyright &copy; 2019 </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
