@@ -25,7 +25,7 @@ SECRET_KEY = 'xus-j(5i=#9is^+us6sl8v3y5a9zg4y+p-*8*@z7+1bj982n$-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'dekfupae.pythonanywhere.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = [u'pythonpam.pythonanywhere.com','127.0.0.1','localhost']
 
 
 # Application definition
